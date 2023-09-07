@@ -9,4 +9,5 @@ with Daad() as bot:
     bot.choose_programme('Computer Science')
     bot.apply_filters()
     bot.filter_amount_on_page()
+    bot.go_to_next_page()
     time.sleep(30)

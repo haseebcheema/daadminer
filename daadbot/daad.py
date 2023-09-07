@@ -85,4 +85,6 @@ class Daad(webdriver.Chrome):
         num_of_items = num_filter.find_element(By.CSS_SELECTOR, 'option[value = "75"]')
         num_of_items.click()
 
-
+    def go_to_next_page(self):
+        next_page = self.find_element(By.CSS_SELECTOR, 'a[title="next"]')
+        next_page.click()
