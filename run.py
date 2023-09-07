@@ -6,4 +6,5 @@ with Daad() as bot:
     bot.accept_cookies()
     bot.change_language()
     bot.go_to_international_programs()
+    bot.choose_programme('Computer Science')
     time.sleep(10)

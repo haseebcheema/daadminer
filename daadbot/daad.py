@@ -33,3 +33,34 @@ class Daad(webdriver.Chrome):
         ul_list = self.find_element(By.CSS_SELECTOR, 'ul[aria-live="polite"]')
         link_to_programs = ul_list.find_elements(By.TAG_NAME, 'li')
         link_to_programs[2].click()
+
+    def choose_programme(self, programme):
+
+        # enter programme in the input box
+        input_field = self.find_element(By.CSS_SELECTOR, 'input[name="q"]')
+        input_field.clear()
+        input_field.send_keys(programme)
+
+        # select course
+        course_type = self.find_element(By.CSS_SELECTOR, 'button[title="Please select"]')
+        course_type.click()
+        select_course = self.find_element(By.CLASS_NAME, 'multiselect-container')
+        masters_course = select_course.find_elements(By.CSS_SELECTOR, 'li input')
+        masters_course[1].click()
+
+        # select language
+        course_language = self.find_elements(By.CSS_SELECTOR, 'button[title="Please select"]')
+        course_language[1].click()
+        select_language = self.find_elements(By.CLASS_NAME, 'multiselect-container')
+        eng_language = select_language[1].find_elements(By.CSS_SELECTOR, 'li input')
+        eng_language[1].click()
+
+        # select course field
+        course_field = self.find_element(By.CSS_SELECTOR, 'select[name="fos"]')
+        course_field.click()
+        select_field = course_field.find_element(By.CSS_SELECTOR, 'option[value="6"]')
+        select_field.click()
+
+        # submit the form
+        submit = self.find_element(By.CSS_SELECTOR, 'button[type="submit"]')
+        submit.click()
