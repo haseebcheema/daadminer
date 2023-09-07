@@ -8,4 +8,5 @@ with Daad() as bot:
     bot.go_to_international_programs()
     bot.choose_programme('Computer Science')
     bot.apply_filters()
-    time.sleep(10)
+    bot.filter_amount_on_page()
+    time.sleep(30)

@@ -78,3 +78,11 @@ class Daad(webdriver.Chrome):
         select_fees.click()
         no_fee_option = select_fees.find_element(By.CSS_SELECTOR, 'option[value="1"]')
         no_fee_option.click()
+
+    def filter_amount_on_page(self):
+        num_filter = self.find_element(By.ID, 'filterAmountOnPage')
+        num_filter.click()
+        num_of_items = num_filter.find_element(By.CSS_SELECTOR, 'option[value = "75"]')
+        num_of_items.click()
+
+
