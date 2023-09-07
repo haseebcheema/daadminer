@@ -1,3 +1,7 @@
 from daadbot.daad import Daad
+import time
 
-Daad().land_first_page()
+with Daad() as bot:
+    bot.land_first_page()
+    bot.accept_cookies()
+    time.sleep(10)
