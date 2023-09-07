@@ -64,3 +64,17 @@ class Daad(webdriver.Chrome):
         # submit the form
         submit = self.find_element(By.CSS_SELECTOR, 'button[type="submit"]')
         submit.click()
+
+    def apply_filters(self):
+
+        # select subject
+        select_subject = self.find_elements(By.CLASS_NAME, 'c-multiselect')
+        select_subject[1].click()
+        select_cs = select_subject[1].find_element(By.CSS_SELECTOR, 'input[value="49"]')
+        select_cs.click()
+
+        # select no fees
+        select_fees = self.find_element(By.ID, 'filterFee')
+        select_fees.click()
+        no_fee_option = select_fees.find_element(By.CSS_SELECTOR, 'option[value="1"]')
+        no_fee_option.click()

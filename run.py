@@ -7,4 +7,5 @@ with Daad() as bot:
     bot.change_language()
     bot.go_to_international_programs()
     bot.choose_programme('Computer Science')
+    bot.apply_filters()
     time.sleep(10)
