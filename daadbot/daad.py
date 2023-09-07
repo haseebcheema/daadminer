@@ -28,3 +28,8 @@ class Daad(webdriver.Chrome):
     def change_language(self):
         eng_language = self.find_element(By.CLASS_NAME, 'qa-language-item')
         eng_language.click()
+
+    def go_to_international_programs(self):
+        ul_list = self.find_element(By.CSS_SELECTOR, 'ul[aria-live="polite"]')
+        link_to_programs = ul_list.find_elements(By.TAG_NAME, 'li')
+        link_to_programs[2].click()
