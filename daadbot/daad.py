@@ -25,3 +25,6 @@ class Daad(webdriver.Chrome):
         cookies_btn = self.find_element(By.CLASS_NAME, 'snoop-button')
         cookies_btn.click()
 
+    def change_language(self):
+        eng_language = self.find_element(By.CLASS_NAME, 'qa-language-item')
+        eng_language.click()
