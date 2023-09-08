@@ -96,5 +96,5 @@ class Daad(webdriver.Chrome):
         daad_section = DaadData(uni_section_element)
 
         # getting all the data
-        daad_section.get_course_type()
+        daad_section.get_data()
 
