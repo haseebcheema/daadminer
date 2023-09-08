@@ -14,5 +14,11 @@ with Daad() as bot:
 
     bot.land_first_page()
     bot.accept_cookies()
-    bot.get_daad_results()
+    bot.filter_amount_on_page()
     time.sleep(10)
+    num_of_pages = bot.total_pages()
+    for page in range(num_of_pages):
+        time.sleep(10)
+        print('************ SCRAPING PAGE ' + str(page+1) + ' ************')
+        bot.get_daad_results()
+        bot.go_to_next_page()

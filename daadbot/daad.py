@@ -81,15 +81,19 @@ class Daad(webdriver.Chrome):
     #     no_fee_option = select_fees.find_element(By.CSS_SELECTOR, 'option[value="1"]')
     #     no_fee_option.click()
     #
-    # def filter_amount_on_page(self):
-    #     num_filter = self.find_element(By.ID, 'filterAmountOnPage')
-    #     num_filter.click()
-    #     num_of_items = num_filter.find_element(By.CSS_SELECTOR, 'option[value = "75"]')
-    #     num_of_items.click()
-    #
-    # def go_to_next_page(self):
-    #     next_page = self.find_element(By.CSS_SELECTOR, 'a[title="next"]')
-    #     next_page.click()
+    def filter_amount_on_page(self):
+        num_filter = self.find_element(By.ID, 'filterAmountOnPage')
+        num_filter.click()
+        num_of_items = num_filter.find_element(By.CSS_SELECTOR, 'option[value = "50"]')
+        num_of_items.click()
+
+    def total_pages(self):
+        num_pages = self.find_element(By.CLASS_NAME, 'js-result-pagination-last').text
+        return int(num_pages)
+
+    def go_to_next_page(self):
+        next_page = self.find_element(By.CLASS_NAME, 'c-result-pagination__link.c-result-pagination__link--next.ml-1.js-result-pagination-next')
+        next_page.click()
 
     def get_daad_results(self):
         uni_section_element = self.find_element(By.CLASS_NAME, 'js-result-list-content')
