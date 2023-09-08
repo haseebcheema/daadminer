@@ -1,1 +1,1 @@
-BASE_URL = "https://www.daad.de/"
+BASE_URL = "https://www.daad.de"
