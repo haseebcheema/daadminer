@@ -14,5 +14,5 @@ with Daad() as bot:
 
     bot.land_first_page()
     bot.accept_cookies()
-    bot.daad_results()
+    bot.get_daad_results()
     time.sleep(10)

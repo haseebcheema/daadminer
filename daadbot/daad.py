@@ -91,8 +91,10 @@ class Daad(webdriver.Chrome):
     #     next_page = self.find_element(By.CSS_SELECTOR, 'a[title="next"]')
     #     next_page.click()
 
-    def daad_results(self):
+    def get_daad_results(self):
         uni_section_element = self.find_element(By.CLASS_NAME, 'js-result-list-content')
         daad_section = DaadData(uni_section_element)
+
+        # getting all the data
         daad_section.get_course_type()
 
