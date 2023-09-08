@@ -84,7 +84,7 @@ class Daad(webdriver.Chrome):
     def filter_amount_on_page(self):
         num_filter = self.find_element(By.ID, 'filterAmountOnPage')
         num_filter.click()
-        num_of_items = num_filter.find_element(By.CSS_SELECTOR, 'option[value = "50"]')
+        num_of_items = num_filter.find_element(By.CSS_SELECTOR, 'option[value = "100"]')
         num_of_items.click()
 
     def total_pages(self):
