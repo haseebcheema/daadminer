@@ -6,13 +6,8 @@ with Daad() as bot:
     bot.accept_cookies()
     bot.change_language()
     bot.go_to_international_programs()
-
-    time.sleep(10)
-
     bot.choose_programme('Computer Science')
-
     time.sleep(5)
-
     bot.apply_filters()
     bot.filter_amount_on_page()
 
@@ -20,9 +15,12 @@ with Daad() as bot:
 
     num_of_pages = bot.total_pages()
     for page in range(num_of_pages):
-        time.sleep(20)
+        time.sleep(10)
         print('SCRAPING PAGE ' + str(page+1))
         bot.get_daad_results()
-        bot.go_to_next_page()
+        if page != 1:
+            bot.go_to_next_page()
 
     print("Data is scraped successfully!")
+    bot.convert_into_csv()
+    print("Data is saved into csv successfully!")
