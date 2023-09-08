@@ -101,4 +101,3 @@ class Daad(webdriver.Chrome):
 
         # getting all the data
         daad_section.get_data()
-
