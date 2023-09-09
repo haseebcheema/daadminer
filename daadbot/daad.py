@@ -109,4 +109,8 @@ class Daad(webdriver.Chrome):
 
     def convert_into_csv(self):
         df = pd.DataFrame(self.scraped_data)
-        df.to_csv('daad_data.csv', index=True)
+        df.to_csv('daad_data.csv', index=False)
+
+    def convert_into_excel(self):
+        df = pd.DataFrame(self.scraped_data)
+        df.to_excel('daaddata.xlsx', index=False)
