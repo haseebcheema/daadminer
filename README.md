@@ -1,6 +1,5 @@
 # daadminer
 Automated the daad.de website using Selenium, and conducted web scraping to gather data regarding computer science master's programs at German universities, including details such as university names, locations, program types, and tuition fees.
 
-[daaddata.xlsx](https://github.com/haseebcheema/daadminer/files/12565251/daaddata.xlsx)
-![dataimage](https://github.com/haseebcheema/daadminer/assets/88078231/32a5b534-7660-4345-bf0d-0df70962a564)
+Data: [daaddata.xlsx](https://github.com/haseebcheema/daadminer/files/12565251/daaddata.xlsx)
 
